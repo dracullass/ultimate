@@ -1,17 +1,23 @@
 <template>
-     <div class="card" :style="{ backgroundImage: 'url(' + path + ')' }" > 
+    <div class="flex-wrap">
+        <div class="card" v-for="item in list" :key="item.titulo" :style="{ backgroundImage: 'url(' + item.pathImg + ')' }" > 
             <div class="overlay">
-                {{nome}}
+                {{item.titulo}}
             </div>
         </div>
+    </div>
 </template>
 
 <script>
 export default {
+    props: {
+        games: Array
+    },
     data() {
         return {
-            nome: 'Battlefield 5',
-            path: '/bf.jpg',
+            //nome: 'Battlefield 5',
+            //path: '/bf1.jpg',
+            list: this.games,
         }
     },
     methods: {
@@ -21,6 +27,12 @@ export default {
 </script>
 
 <style>
+
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .card {
   /* Add shadows to create the "card" effect */
