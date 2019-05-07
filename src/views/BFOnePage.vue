@@ -37,13 +37,6 @@ export default {
 }
 
 .info{
-    padding: 25px;
-    height: 200px;
-    background: black;
-    background: rgba(0, 0, 0, 0.5); /* Black see-through */
-    font-size:36px;
-    color: white;
-    justify-content: center;
-    align-items: center;    
+     
 }
 </style>

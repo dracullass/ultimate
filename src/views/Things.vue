@@ -11,12 +11,12 @@ export default {
     data() {
         return {
             games: [
-                {titulo: "Battlefield 1", pathImg: 'games/bf1.jpg'},
-                {titulo: "Battlefield 3", pathImg: 'games/bf3.jpg'},
-                {titulo: "Battlefield 4", pathImg: 'games/bf4.jpg'},
-                {titulo: "Battlefield 5", pathImg: 'games/bf5.jpg'},
-                {titulo: "Battlefield Bad Company 2", pathImg: 'games/bfbc2.jpg'},
-                {titulo: "Battlefield Bad Company 2 Vietnam", pathImg: 'games/bfbc2viet.jpg'},
+                {titulo: "Battlefield 1", pathImg: 'games/bf1.jpg', to: '/battlefield_one'},
+                {titulo: "Battlefield 3", pathImg: 'games/bf3.jpg', to: '/battlefield_one'},
+                {titulo: "Battlefield 4", pathImg: 'games/bf4.jpg', to: '/battlefield_one'},
+                {titulo: "Battlefield 5", pathImg: 'games/bf5.jpg', to: '/battlefield_one'},
+                {titulo: "Battlefield Bad Company 2", pathImg: 'games/bfbc2.jpg', to: '/battlefield_one'},
+                {titulo: "Battlefield Bad Company 2 Vietnam", pathImg: 'games/bfbc2viet.jpg', to: '/battlefield_one'},
             ]
         }
     },

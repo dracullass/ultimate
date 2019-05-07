@@ -2,7 +2,9 @@
     <div class="flex-wrap">
         <div class="card" v-for="item in list" :key="item.titulo" :style="{ backgroundImage: 'url(' + item.pathImg + ')' }" >
             <div class="btnOverlay">
-                <button class="btnOverlay btnMore">More</button>    
+                <router-link :to="item.to">
+                    <button class="btnOverlay btnMore">More</button>
+                </router-link>    
             </div> 
             <div class="overlay">
                 {{item.titulo}}
