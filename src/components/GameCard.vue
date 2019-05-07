@@ -2,7 +2,7 @@
     <div class="flex-wrap">
         <div class="card" v-for="item in list" :key="item.titulo" :style="{ backgroundImage: 'url(' + item.pathImg + ')' }" >
             <div class="btnOverlay">
-                <button><i class="fas fa-plus"></i></button>    
+                <button class="btnOverlay btnMore">More</button>    
             </div> 
             <div class="overlay">
                 {{item.titulo}}
@@ -83,10 +83,33 @@ export default {
 }
 
 button{
-    border-radius: 15px;
-    border-left: 4px solid;
-    border-left-color: blueviolet;
-    background: rgb(66, 184, 221); /* this is a light blue */
+    border-radius: 5%;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 10px;
+    background-color: #e7e7e7;
+    padding: 5px 20px;
+    border-bottom: indigo solid;
+    transition-duration: 1s;
+    
+}
+
+.btnMore{
+    background-color:indigo; 
+    color: white; 
+    border: 2px solid indigo;
+}
+
+.btnMore:hover{
+  transition: 0.5s linear;
+  background-color:transparent;
+  color: white;
+  text-shadow:  0 0 13px indigo;
+  text-decoration-line: underline;
+
 }
 
 .btnOverlay{
@@ -99,6 +122,7 @@ button{
     position: absolute;
     top: 10px;
     left: 16px;
+    font-size: 15px
 
 }
 </style>
