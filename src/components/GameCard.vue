@@ -109,7 +109,6 @@ button{
   color: white;
   text-shadow:  0 0 13px indigo;
   text-decoration-line: underline;
-
 }
 
 .btnOverlay{
