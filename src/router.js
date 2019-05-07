@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Thing from './views/Things.vue'
+import BFOnePage from './views/BFOnePage.vue'
 
 Vue.use(Router)
 
@@ -26,6 +27,11 @@ export default new Router({
       path: '/things',
       name: 'things',
       component: Thing
+    },
+    {
+      path: '/battlefield_one',
+      name: 'battlefield_one',
+      component: BFOnePage
     }
   ]
 })
