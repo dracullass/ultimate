@@ -1,31 +1,45 @@
 <template>
 <div class="main">
+      <router-link to="things">
+            <button class="btnMore">Back</button>
+        </router-link>  
     <div class="parallax"></div>
-    <div class="info">
-        <p>{{content}}
-        </p>
-    </div>
-    
-    <div class="parallax"></div>
-    <div class="info">
-        blabla
-    </div>
+       
+        <div class="info">
+            <div>Jogo: <strong>{{info.player.game}}</strong></div>
+            <div>Plataforma: <strong>{{info.player.plat}}</strong></div>
+            <div>Nickname: <strong>{{info.player.name}}</strong></div>
+            <div>Tag Clan: <strong>{{info.player.tag}}</strong></div>
+            <div>Current Rank: <strong>{{info.player.rank.nr}}</strong></div>
+            <div>Time Played: <strong>{{info.player.timePlayed}}</strong></div>
+        </div>
     <div class="parallax"></div>
 </div>   
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
-            content: 'Battlefield 1 é um jogo eletrônico de tiro em primeira pessoa ambientado na Primeira Guerra Mundial, desenvolvido pela EA DICE e publicada pela Electronic Arts. É o décimo quarto jogo da franquia Battlefield. Foi lançado em outubro de 2016 para Microsoft Windows, PlayStation 4 e Xbox One.',
+            plataform: 'pc',
+            player: 'nnyjaah',
+            info: null,
         }
+    },
+    mounted() {
+        axios.get('http://api.bf4stats.com/api/playerInfo?plat='+this.plataform+'&name='+this.player+'&opt=progress&output=json')
+        .then(response => (this.info = response.data))
+        .catch(error => error)
     },
 }
 </script>
 
 <style lang="scss">
 
+button{
+    float: left;
+}
 
 .parallax{
     background-image: url('../assets/bf1bg.jpg');
